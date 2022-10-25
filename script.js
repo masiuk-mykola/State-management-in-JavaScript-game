@@ -15,8 +15,9 @@ window.addEventListener("load", function () {
 
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    player.update(input.lastkey);
     player.draw(ctx);
-    drawStatustext(ctx, input);
+    drawStatustext(ctx, input, player);
     requestAnimationFrame(animate);
   }
   animate();
